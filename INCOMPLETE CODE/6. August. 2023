@@ -133,7 +133,7 @@ extra_time_stop.place(relx = 0.55, rely = 0.46, anchor = CENTER)
 
 
 
-
+#note to self create a dash line to seperate home and away scores using canvas, then after figure out the stopwatch formatting.
 
 
 seperation_line = Canvas(r, width = 200, height = 100)
