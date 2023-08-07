@@ -75,7 +75,17 @@ def update_time():
         extra_time.config(text = "{:000.2f}".format(elapsed_time))
         extra_time.after(50,update_time)
 
+def kickoff_button_split():
+    kickoff_button["text"]= "Stop"
+    kickoff_button["width"] = 5
+    kickoff_button.place(relx =0.52, rely= 0.4, anchor = CENTER )
+    start_kickoff_button_split = Button(r, text = "Start",width =5,font = ('Bondoni MT',15)
+    start_kickoff_button_split.place( relx = 0.48, y =0.4, anchor = CENTER)
 
+kickoff_button = Button(r,
+text="Kick-Off",font = ('Bondoni MT',15),
+width = 15, command = kickoff_button_split )
+kickoff_button.place(relx=0.495, rely=0.4, anchor=CENTER)
 
 kickoff_button = Button(r,
                          text="Kick-Off",font = ('Bondoni MT',15),
