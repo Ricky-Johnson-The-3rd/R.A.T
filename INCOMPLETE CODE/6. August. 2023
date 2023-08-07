@@ -55,6 +55,9 @@ def away_score_change():
 def reset_screen():
     Score_home ["text"]=0
     score_away["text"]=0
+    while extra_time["text"] != 0.0:
+        stop
+
 
 def start():
     global is_running
