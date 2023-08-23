@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import *
 from tkinter.filedialog import asksaveasfile
 import time 
-
+#######################################################################
 
 r = tk.Tk()
 r.title('Referee Assistant Tool')
@@ -13,7 +13,7 @@ def save_file():
                       defaultextension=".txt",
                       filetypes=[("All Files", "*.*"), 
                                  ("Text Documents", "*.txt")])
-
+###################################################################
 menu = Menu(r)
 r.config(menu=menu)
 filemenu = Menu(menu)
@@ -25,7 +25,8 @@ filemenu.add_cascade(label='New', menu=newmenu)
 newmenu.add_command(label='Match Timer')
 
 # this will be used to create a new reset window when the user wants a new window after using the previous one
-
+################################################################
+################################################################
 filemenu.add_command(label='Open')
 
 filemenu.add_command(label='Close', command=r.quit)
@@ -38,26 +39,88 @@ menu.add_cascade(label='Save', menu=savemenu)
 
 savemenu.add_cascade(label='Save As', command=save_file)
 
-
+####################################################################
 
 def home_score_change():
     Score_home["text"] +=1
     if Score_home["text"] == 99:
         Score_home["text"]= 0
 
+home= Label(r,
+            text = 'Home',font= ('Bondoni MT',50))
+home.place(relx= 0.175, rely= 0.05, anchor = NW)
+
+Score_home = Label(r,
+                    text= 0, foreground='dark blue',
+                      font=('Bondoni MT', 150))
+Score_home.place(relx=0.2, rely=0.15, anchor = NW) 
+
+goal_home = Button(r,
+                    text="Goal",font =  ('Bondoni MT',15),
+                    width= 10,command = home_score_change)
+goal_home.place(relx=0.2, rely=0.45, anchor = W)
+
+home_booking = Button(r,
+                      text= "Booking", font=('Bondoni MT',15), width = 15, )
+home_booking.place(relx = 0.2, rely = 0.5)
+
+p1_name = tk.StringVar()
+def open_home_team_sheet():
+    htsw = tk.Tk()
+    htsw_window_frame = tk.Frame(r, padding="18 2")
+    htsw_window_frame.grid(column = 0, row = 0)
+    htsw.resizable(False,False)
+    htsw.geometry("300x900")
+    htsw.title("Home Team Sheet")
+    p1=tk.Entry(htsw,textvariable = p1_name,font=('Bondoni MT',12))
+    p1.grid(row =1, column = 1)
+
+ #def open_home_team_sheet():
+    #home_team_sheet_window = Toplevel(r)
+    #home_team_sheet_window.resizable(False,False)
+    #home_team_sheet_window.geometry("300x900")
+    
+    #home_team_sheet_window.title("Home Team Sheet")
+    #home_team_P1 = tk.Entry(r,font =('Bondoni MT',15) )
+    #home_team_P1.grid(row = 1, column = 1)
+
+
+
+home_team_sheet = Button(r,
+                         text = "Team Sheet", font = ('Bondoni MT',15), width = 15,command = open_home_team_sheet)
+home_team_sheet.place(relx = 0.2, rely = 0.55)
+#################################################################
 
 def away_score_change():
     score_away["text"] +=1
     if score_away["text"]==99:
         score_away["text"]=0
 
+away = Label(r,
+             text="Away",font = ('Bondoni MT',50))
+away.place(relx = 0.8, rely = 0.05, anchor = NE)
+
+score_away = Label(r,
+                    text= 0 , foreground='red',
+                    font=("Bondoni MT", 150))
+score_away.place(relx=0.8, rely=0.15, anchor = NE)
+
+goal_away = Button(r,
+                    text="Goal", font = ('Bondoni MT',15),
+                    width= 10,command = away_score_change)
+goal_away.place(relx=0.8, rely=0.45, anchor = E)
+
+###########################################################
 
 def reset_screen():
     Score_home ["text"]=0
     score_away["text"]=0
-    while extra_time["text"] != 0.0:
-        stop
-
+    
+reset_score = Button(r,
+                     text = "Reset Score",
+                     font = ('Segoe UI Semibolld',10),
+                     command = reset_screen)
+reset_score.place(relx = 0.5, rely= 0.85, anchor=S)
 
 def start():
     global is_running
@@ -78,56 +141,7 @@ def update_time():
         extra_time.config(text = "{:000.2f}".format(elapsed_time))
         extra_time.after(50,update_time)
 
-def kickoff_button_split():
-    kickoff_button["text"]= "Stop"
-    kickoff_button["width"] = 5
-    kickoff_button.place(relx =0.52, rely= 0.4, anchor = CENTER )
-    start_kickoff_button_split = Button(r, text = "Start",width =5,font = ('Bondoni MT',15)
-    start_kickoff_button_split.place( relx = 0.48, y =0.4, anchor = CENTER)
-
-kickoff_button = Button(r,
-text="Kick-Off",font = ('Bondoni MT',15),
-width = 15, command = kickoff_button_split )
-kickoff_button.place(relx=0.495, rely=0.4, anchor=CENTER)
-
-kickoff_button = Button(r,
-                         text="Kick-Off",font = ('Bondoni MT',15),
-                         width = 15)
-kickoff_button.place(relx=0.495, rely=0.4, anchor=CENTER)
-
-goal_home = Button(r,
-                    text="Goal",font =  ('Bondoni MT',15),
-                    width= 10,command = home_score_change)
-goal_home.place(relx=0.2, rely=0.45, anchor = W)
-
-Score_home = Label(r,
-                    text= 0, foreground='dark blue',
-                      font=('Bondoni MT', 150))
-Score_home.place(relx=0.2, rely=0.15, anchor = NW)
-
-home= Label(r,
-            text = 'Home',font= ('Bondoni MT',50))
-home.place(relx= 0.175, rely= 0.05, anchor = NW)
-
-goal_away = Button(r,
-                    text="Goal", font = ('Bondoni MT',15),
-                    width= 10,command = away_score_change)
-goal_away.place(relx=0.8, rely=0.45, anchor = E)
-
-score_away = Label(r,
-                    text= 0 , foreground='red',
-                    font=("Bondoni MT", 150))
-score_away.place(relx=0.8, rely=0.15, anchor = NE)
-
-away = Label(r,
-             text="Away",font = ('Bondoni MT',50))
-away.place(relx = 0.8, rely = 0.05, anchor = NE)
-
-reset_score = Button(r,
-                     text = "Reset Score",
-                     font = ('Segoe UI Semibolld',10),
-                     command = reset_screen)
-reset_score.place(relx = 0.5, rely= 0.85, anchor=S)
+##############################################################################################
 
 extra_time = Label(r,
                        text = "00.00", font = ("MS PGothic",35),
@@ -143,6 +157,40 @@ extra_time_stop = Button(r,
                          text = "Stop",foreground = "dark green",
                          font = ("MS PGothic",20), command = stop)
 extra_time_stop.place(relx = 0.55, rely = 0.46, anchor = CENTER)
+
+##################################################################################################
+
+def kickoff_button_split():
+    kickoff_button["text"]= "Stop"
+    kickoff_button["width"] = 5
+    kickoff_button.place(relx =0.52, rely= 0.4, anchor = CENTER )
+    start_kickoff_button_split = Button(r, text = "Start", width = 5, font = ('Bondoni MT',15))
+    start_kickoff_button_split.place(relx =0.48, rely =0.4, anchor = CENTER)
+
+kickoff_button = Button(r,
+text="Kick-Off",font = ('Bondoni MT',15),
+width = 15, command = kickoff_button_split )
+kickoff_button.place(relx=0.495, rely=0.4, anchor=CENTER)
+
+kickoff_button = Button(r,
+                         text="Kick-Off",font = ('Bondoni MT',15),
+                         width = 15)
+kickoff_button.place(relx=0.495, rely=0.4, anchor=CENTER)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
