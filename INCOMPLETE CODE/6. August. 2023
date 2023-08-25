@@ -67,13 +67,11 @@ home_booking.place(relx = 0.2, rely = 0.5)
 p1_name = tk.StringVar()
 def open_home_team_sheet():
     htsw = tk.Tk()
-    htsw_window_frame = tk.Frame(r, padding="18 2")
-    htsw_window_frame.grid(column = 0, row = 0)
     htsw.resizable(False,False)
     htsw.geometry("300x900")
     htsw.title("Home Team Sheet")
     p1=tk.Entry(htsw,textvariable = p1_name,font=('Bondoni MT',12))
-    p1.grid(row =1, column = 1)
+    p1.grid(padx =0 , pady = 20)
 
  #def open_home_team_sheet():
     #home_team_sheet_window = Toplevel(r)
