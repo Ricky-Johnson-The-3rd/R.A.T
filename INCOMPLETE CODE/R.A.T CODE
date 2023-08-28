@@ -127,68 +127,66 @@ def open_home_team_sheet():
     y = 0.035
     val = 0.030
     
-    edit = Button(htsw,
-                   text ="Edit",font= (bdoni,10),width = 7)
-    edit.place(relx=0.4, rely= 0.58, anchor = CENTER)
-    save = Button(htsw,
-                  text="Save",font = ("Centaur",12,"bold"),width= 7)
-    save.place(relx=0.4,rely=0.6)
-    apnum1 = tk.Entry(htsw, textvariable=p1_num,
+
+   
+       
+
+    pnum1 = tk.Entry(htsw, textvariable=p1_num,
                      font=(df), width=4)
-    apnum1.place(relx=x2, rely=y)
+    pnum1.place(relx=x2, rely=y)
 
-    apnum2 = tk.Entry(htsw, textvariable=p2_num,
+    pnum2 = tk.Entry(htsw, textvariable=p2_num,
                      font=(df), width=4)
-    apnum2.place(relx=x2, rely=y+val)
+    pnum2.place(relx=x2, rely=y+val)
 
-    apnum3 = tk.Entry(htsw, textvariable=p3_num, 
+    pnum3 = tk.Entry(htsw, textvariable=p3_num, 
                      font=(df), width=4)
-    apnum3.place(relx=x2, rely=y+val*2)
+    pnum3.place(relx=x2, rely=y+val*2)
 
-    apnum4 = tk.Entry(htsw, textvariable=p4_num, font=(df), width=4)
-    apnum4.place(relx=x2, rely=y+val*3)
+    pnum4 = tk.Entry(htsw, textvariable=p4_num, font=(df), width=4)
+    pnum4.place(relx=x2, rely=y+val*3)
 
-    apnum5 = tk.Entry(htsw, textvariable=p5_num, font=(df), width=4)
-    apnum5.place(relx=x2, rely=y+val*4)
+    pnum5 = tk.Entry(htsw, textvariable=p5_num, font=(df), width=4)
+    pnum5.place(relx=x2, rely=y+val*4)
 
-    apnum6 = tk.Entry(htsw, textvariable=p6_num, font=(df), width=4)
-    apnum6.place(relx=x2, rely=y+val*5)
+    pnum6 = tk.Entry(htsw, textvariable=p6_num, font=(df), width=4)
+    pnum6.place(relx=x2, rely=y+val*5)
 
-    apnum7 = tk.Entry(htsw, textvariable=p7_num, font=(df), width=4)
-    apnum7.place(relx=x2, rely=y+val*6)
+    pnum7 = tk.Entry(htsw, textvariable=p7_num, font=(df), width=4)
+    pnum7.place(relx=x2, rely=y+val*6)
 
-    apnum7 = tk.Entry(htsw, textvariable=p7_num, font=(df), width=4)
-    apnum7.place(relx=x2, rely=y+val*7)
+    pnum8 = tk.Entry(htsw, textvariable=p8_num, font=(df), width=4)
+    pnum8.place(relx=x2, rely=y+val*7)
 
-    apnum8 = tk.Entry(htsw, textvariable=p8_num, font=(df), width=4)
-    apnum8.place(relx=x2, rely=y+val*8)
+    pnum9 = tk.Entry(htsw, textvariable=p9_num, font=(df), width=4)
+    pnum9.place(relx=x2, rely=y+val*8)
 
-    apnum9 = tk.Entry(htsw, textvariable=p9_num, font=(df), width=4)
-    apnum9.place(relx=x2, rely=y+val*9)
+    pnum10 = tk.Entry(htsw, textvariable=p10_num, font=(df), width=4)
+    pnum10.place(relx=x2, rely=y+val*9)
 
-    apnum10 = tk.Entry(htsw, textvariable=p10_num, font=(df), width=4)
-    apnum10.place(relx=x2, rely=y+val*10)
+    pnum11 = tk.Entry(htsw, textvariable=p11_num, font=(df), width=4)
+    pnum11.place(relx=x2, rely=y+val*10)
 
-    apnum11 = tk.Entry(htsw, textvariable=p11_num, font=(df), width=4)
-    apnum11.place(relx=x2, rely=y+val*11)
+    pnum12 = tk.Entry(htsw, textvariable=p12_num, font=(df), width=4)
+    pnum12.place(relx=x2, rely=y+val*11)
 
-    apnum12 = tk.Entry(htsw, textvariable=p12_num, font=(df), width=4)
-    apnum12.place(relx=x2, rely=y+val*12)
+    pnum13 = tk.Entry(htsw, textvariable=p13_num, font=(df), width=4)
+    pnum13.place(relx=x2, rely=y+val*12)
 
-    apnum13 = tk.Entry(htsw, textvariable=p13_num, font=(df), width=4)
-    apnum13.place(relx=x2, rely=y+val*13)
+    pnum14 = tk.Entry(htsw, textvariable=p14_num, font=(df), width=4)
+    pnum14.place(relx=x2, rely=y+val*13)
 
-    apnum14 = tk.Entry(htsw, textvariable=p14_num, font=(df), width=4)
-    apnum14.place(relx=x2, rely=y+val*14)
+    pnum15 = tk.Entry(htsw, textvariable=p15_num, font=(df), width=4)
+    pnum15.place(relx=x2, rely=y+val*14)
 
-    apnum15 = tk.Entry(htsw, textvariable=p15_num, font=(df), width=4)
-    apnum15.place(relx=x2, rely=y+val*15)
+    pnum16 = tk.Entry(htsw, textvariable=p16_num, font=(df), width=4)
+    pnum16.place(relx=x2, rely=y+val*15)
 
-    apnum16 = tk.Entry(htsw, textvariable=p16_num, font=(df), width=4)
-    apnum16.place(relx=x2, rely=y+val*16)
+    pnum17 = tk.Entry(htsw, textvariable=p17_num, font=(df), width=4)
+    pnum17.place(relx=x2, rely=y+val*16)
 
-    apnum17 = tk.Entry(htsw, textvariable=p17_num, font=(df), width=4)
-    apnum17.place(relx=x2, rely=y+val*17)
+    pnum18 = tk.Entry(htsw, textvariable=p18_num, font=(df), width=4)
+    pnum18.place(relx=x2, rely=y+val*17)
 
     
 
@@ -245,6 +243,19 @@ def open_home_team_sheet():
 
     pna18 = tk.Entry(htsw, textvariable=p18_name, font=(df))
     pna18.place(relx=x, rely=y + val * 17)
+
+
+
+    def save_team_sheet():
+        htsw.destroy()
+        
+    save = Button(htsw,
+                 text="Save",font = (bdoni,10),width= 7,command = save_team_sheet)
+    save.place(relx=0.39,rely=0.62)
+
+   
+
+
 
 ###############################################################################################################################
 
@@ -319,19 +330,19 @@ ap18_num = tk.IntVar()
 
 
 def open_away_team_sheet():
-    htsw = Toplevel(r)
+    atsw = Toplevel(r)
 
-    htsw.geometry("300x800")
+    atsw.geometry("300x800")
 
-    htsw.resizable(False,False)
+    atsw.resizable(False,False)
 
-    htsw.title("Away - Team Sheet")
+    atsw.title("Away - Team Sheet")
 
-    ts_name=Label(htsw,text= "Name",
+    ts_name=Label(atsw,text= "Name",
                   font = (bdoni,11),)
     ts_name.place(relx= 0.2,rely=0.01,
                    anchor = NW)
-    ts_num=Label(htsw,text = "#",
+    ts_num=Label(atsw,text = "#",
                  font = (bdoni,11))
     ts_num.place(relx=0.05,rely=0.01)
 
@@ -343,118 +354,125 @@ def open_away_team_sheet():
 
     
     
-    apnum1 = tk.Entry(htsw, textvariable=ap1_num,
+    apnum1 = tk.Entry(atsw, textvariable=ap1_num,
                      font=(df), width=4)
     apnum1.place(relx=x2, rely=y)
 
-    apnum2 = tk.Entry(htsw, textvariable=ap2_num,
+    apnum2 = tk.Entry(atsw, textvariable=ap2_num,
                      font=(df), width=4)
     apnum2.place(relx=x2, rely=y+val)
 
-    apnum3 = tk.Entry(htsw, textvariable=ap3_num, 
+    apnum3 = tk.Entry(atsw, textvariable=ap3_num, 
                      font=(df), width=4)
     apnum3.place(relx=x2, rely=y+val*2)
 
-    apnum4 = tk.Entry(htsw, textvariable=ap4_num, font=(df), width=4)
+    apnum4 = tk.Entry(atsw, textvariable=ap4_num, font=(df), width=4)
     apnum4.place(relx=x2, rely=y+val*3)
 
-    apnum5 = tk.Entry(htsw, textvariable=ap5_num, font=(df), width=4)
+    apnum5 = tk.Entry(atsw, textvariable=ap5_num, font=(df), width=4)
     apnum5.place(relx=x2, rely=y+val*4)
 
-    apnum6 = tk.Entry(htsw, textvariable=ap6_num, font=(df), width=4)
+    apnum6 = tk.Entry(atsw, textvariable=ap6_num, font=(df), width=4)
     apnum6.place(relx=x2, rely=y+val*5)
 
-    apnum7 = tk.Entry(htsw, textvariable=ap7_num, font=(df), width=4)
+    apnum7 = tk.Entry(atsw, textvariable=ap7_num, font=(df), width=4)
     apnum7.place(relx=x2, rely=y+val*6)
 
-    apnum7 = tk.Entry(htsw, textvariable=ap7_num, font=(df), width=4)
-    apnum7.place(relx=x2, rely=y+val*7)
+    apnum8 = tk.Entry(atsw, textvariable=ap8_num, font=(df), width=4)
+    apnum8.place(relx=x2, rely=y+val*7)
 
-    apnum8 = tk.Entry(htsw, textvariable=ap8_num, font=(df), width=4)
-    apnum8.place(relx=x2, rely=y+val*8)
+    apnum9 = tk.Entry(atsw, textvariable=ap9_num, font=(df), width=4)
+    apnum9.place(relx=x2, rely=y+val*8)
 
-    apnum9 = tk.Entry(htsw, textvariable=ap9_num, font=(df), width=4)
-    apnum9.place(relx=x2, rely=y+val*9)
+    apnum10 = tk.Entry(atsw, textvariable=ap10_num, font=(df), width=4)
+    apnum10.place(relx=x2, rely=y+val*9)
 
-    apnum10 = tk.Entry(htsw, textvariable=ap10_num, font=(df), width=4)
-    apnum10.place(relx=x2, rely=y+val*10)
+    apnum11 = tk.Entry(atsw, textvariable=ap11_num, font=(df), width=4)
+    apnum11.place(relx=x2, rely=y+val*10)
 
-    apnum11 = tk.Entry(htsw, textvariable=ap11_num, font=(df), width=4)
-    apnum11.place(relx=x2, rely=y+val*11)
+    apnum12 = tk.Entry(atsw, textvariable=ap12_num, font=(df), width=4)
+    apnum12.place(relx=x2, rely=y+val*11)
 
-    apnum12 = tk.Entry(htsw, textvariable=ap12_num, font=(df), width=4)
-    apnum12.place(relx=x2, rely=y+val*12)
+    apnum13 = tk.Entry(atsw, textvariable=ap13_num, font=(df), width=4)
+    apnum13.place(relx=x2, rely=y+val*12)
 
-    apnum13 = tk.Entry(htsw, textvariable=ap13_num, font=(df), width=4)
-    apnum13.place(relx=x2, rely=y+val*13)
+    apnum14 = tk.Entry(atsw, textvariable=ap14_num, font=(df), width=4)
+    apnum14.place(relx=x2, rely=y+val*13)
 
-    apnum14 = tk.Entry(htsw, textvariable=ap14_num, font=(df), width=4)
-    apnum14.place(relx=x2, rely=y+val*14)
+    apnum15 = tk.Entry(atsw, textvariable=ap15_num, font=(df), width=4)
+    apnum15.place(relx=x2, rely=y+val*14)
 
-    apnum15 = tk.Entry(htsw, textvariable=ap15_num, font=(df), width=4)
-    apnum15.place(relx=x2, rely=y+val*15)
+    apnum16 = tk.Entry(atsw, textvariable=ap16_num, font=(df), width=4)
+    apnum16.place(relx=x2, rely=y+val*15)
 
-    apnum16 = tk.Entry(htsw, textvariable=ap16_num, font=(df), width=4)
-    apnum16.place(relx=x2, rely=y+val*16)
+    apnum17 = tk.Entry(atsw, textvariable=ap17_num, font=(df), width=4)
+    apnum17.place(relx=x2, rely=y+val*16)
 
-    apnum17 = tk.Entry(htsw, textvariable=ap17_num, font=(df), width=4)
-    apnum17.place(relx=x2, rely=y+val*17)
+    apnum18 = tk.Entry(atsw, textvariable=ap18_num, font=(df), width=4)
+    apnum18.place(relx=x2, rely=y+val*17)
 
     
 
-    apna1 = tk.Entry(htsw, textvariable=ap1_name, font=(df))
+    apna1 = tk.Entry(atsw, textvariable=ap1_name, font=(df))
     apna1.place(relx=x, rely=y)
 
-    apna2 = tk.Entry(htsw, textvariable=ap2_name, font=(df))
+    apna2 = tk.Entry(atsw, textvariable=ap2_name, font=(df))
     apna2.place(relx=x, rely=y + val)
 
-    apna3 = tk.Entry(htsw, textvariable=ap3_name, font=(df))
+    apna3 = tk.Entry(atsw, textvariable=ap3_name, font=(df))
     apna3.place(relx=x, rely=y + val * 2)
 
-    apna4 = tk.Entry(htsw, textvariable=ap4_name, font=(df))
+    apna4 = tk.Entry(atsw, textvariable=ap4_name, font=(df))
     apna4.place(relx=x, rely=y + val * 3)
 
-    apna5 = tk.Entry(htsw, textvariable=ap5_name, font=(df))
+    apna5 = tk.Entry(atsw, textvariable=ap5_name, font=(df))
     apna5.place(relx=x, rely=y + val * 4)
 
-    apna6 = tk.Entry(htsw, textvariable=ap6_name, font=(df))
+    apna6 = tk.Entry(atsw, textvariable=ap6_name, font=(df))
     apna6.place(relx=x, rely=y + val * 5)
 
-    apna7 = tk.Entry(htsw, textvariable=ap7_name, font=(df))
+    apna7 = tk.Entry(atsw, textvariable=ap7_name, font=(df))
     apna7.place(relx=x, rely=y + val * 6)
 
-    apna8 = tk.Entry(htsw, textvariable=ap8_name, font=(df))
+    apna8 = tk.Entry(atsw, textvariable=ap8_name, font=(df))
     apna8.place(relx=x, rely=y + val * 7)
 
-    apna9 = tk.Entry(htsw, textvariable=ap9_name, font=(df))
+    apna9 = tk.Entry(atsw, textvariable=ap9_name, font=(df))
     apna9.place(relx=x, rely=y + val * 8)
 
-    apna10 = tk.Entry(htsw, textvariable=ap10_name, font=(df))
+    apna10 = tk.Entry(atsw, textvariable=ap10_name, font=(df))
     apna10.place(relx=x, rely=y + val * 9)
 
-    apna11 = tk.Entry(htsw, textvariable=ap11_name, font=(df))
+    apna11 = tk.Entry(atsw, textvariable=ap11_name, font=(df))
     apna11.place(relx=x, rely=y + val * 10)
 
-    apna12 = tk.Entry(htsw, textvariable=ap12_name, font=(df))
+    apna12 = tk.Entry(atsw, textvariable=ap12_name, font=(df))
     apna12.place(relx=x, rely=y + val * 11)
 
-    apna13 = tk.Entry(htsw, textvariable=ap13_name, font=(df))
+    apna13 = tk.Entry(atsw, textvariable=ap13_name, font=(df))
     apna13.place(relx=x, rely=y + val * 12)
 
-    apna14 = tk.Entry(htsw, textvariable=ap14_name, font=(df))
+    apna14 = tk.Entry(atsw, textvariable=ap14_name, font=(df))
     apna14.place(relx=x, rely=y + val * 13)
 
-    apna15 = tk.Entry(htsw, textvariable=ap15_name, font=(df))
+    apna15 = tk.Entry(atsw, textvariable=ap15_name, font=(df))
     apna15.place(relx=x, rely=y + val * 14)
 
-    apna16 = tk.Entry(htsw, textvariable=ap16_name, font=(df))
+    apna16 = tk.Entry(atsw, textvariable=ap16_name, font=(df))
     apna16.place(relx=x, rely=y + val * 15)
 
-    apna17 = tk.Entry(htsw, textvariable=ap17_name, font=(df))
+    apna17 = tk.Entry(atsw, textvariable=ap17_name, font=(df))
     apna17.place(relx=x, rely=y + val * 16)
 
-    apna18 = tk.Entry(htsw, textvariable=ap18_name, font=(df))
+    apna18 = tk.Entry(atsw, textvariable=ap18_name, font=(df))
     apna18.place(relx=x, rely=y + val * 17)
+
+    def away_save_team_sheet():
+        atsw.destroy()
+        
+    save = Button(atsw,
+                 text="Save",font = (bdoni,10),width= 7,command = away_save_team_sheet)
+    save.place(relx=0.39,rely=0.62)
 
 away_team_sheet = Button(r,
                          text = "Team Sheet", font =(bdoni,15),
