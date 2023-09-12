@@ -1,0 +1,611 @@
+import tkinter as tk
+from tkinter import *
+from tkinter.filedialog import asksaveasfile
+import time 
+from datetime import datetime
+#######################################################################
+
+r = tk.Tk()
+r.title ('Referee Assistant Tool')
+r.resizable(True, True)
+bdoni = "Bondoni MT"
+def save_file():
+    f = asksaveasfile(initialfile='Untitled.txt',
+                      defaultextension=".txt",
+                      filetypes=[("All Files", "*.*"), 
+                                 ("Text Documents", "*.txt")])
+###################################################################
+menu = Menu(r)
+r.config(menu=menu)
+filemenu = Menu(menu)
+newmenu = Menu(filemenu)
+editmenu = Menu(menu)
+savemenu = Menu(menu)
+menu.add_cascade(label='File', menu=filemenu)
+filemenu.add_cascade(label='New', menu=newmenu)
+newmenu.add_command(label='Match Timer')
+
+# this will be used to create a new reset window when the user wants a new window after using the previous one
+################################################################
+################################################################
+filemenu.add_command(label='Open')
+
+filemenu.add_command(label='Close', command=r.quit)
+
+menu.add_cascade(label='Edit', menu=editmenu)
+
+menu.add_command(label='Half Time')  # chuck another command that open a different file that allows you to change the timer for each half e.g. change from 45 minute halves to 40 minute for U17 games
+
+menu.add_cascade(label='Save', menu=savemenu)
+
+savemenu.add_cascade(label='Save As', command=save_file)
+
+####################################################################
+
+def home_score_change():
+    Score_home["text"] +=1
+    if Score_home["text"] == 99:
+        Score_home["text"]= 0
+
+home= Label(r,
+            text = 'Home',font= (bdoni,50))
+home.place(relx= 0.175, rely= 0.05, anchor = NW)
+
+Score_home = Label(r,
+                    text= 0, foreground='dark blue',
+                      font=(bdoni, 150))
+Score_home.place(relx=0.2, rely=0.15, anchor = NW) 
+
+goal_home = Button(r,
+                    text="Goal",font =  (bdoni,15),
+                    width= 10,command = home_score_change)
+goal_home.place(relx=0.2, rely=0.45, anchor = W)
+
+home_booking = Button(r,
+                      text= "Booking", font=(bdoni,15), width = 15, )
+home_booking.place(relx = 0.2, rely = 0.5)
+###########################################################################################
+
+
+p1_name = tk.StringVar()
+p2_name = tk.StringVar()
+p3_name = tk.StringVar()
+p4_name = tk.StringVar()
+p5_name = tk.StringVar()
+p6_name = tk.StringVar()
+p7_name = tk.StringVar()
+p8_name = tk.StringVar()
+p9_name = tk.StringVar()
+p10_name = tk.StringVar()
+p11_name = tk.StringVar()
+p12_name = tk.StringVar()
+p13_name = tk.StringVar()
+p14_name = tk.StringVar()
+p15_name = tk.StringVar()
+p16_name = tk.StringVar()
+p17_name = tk.StringVar()
+p18_name = tk.StringVar()
+p1_num = tk.IntVar( )
+p2_num = tk.IntVar( )
+p3_num = tk.IntVar( )
+p4_num = tk.IntVar( )
+p5_num = tk.IntVar()
+p6_num = tk.IntVar()
+p7_num = tk.IntVar()
+p8_num= tk.IntVar()
+p9_num= tk.IntVar()
+p10_num = tk.IntVar()
+p11_num = tk.IntVar()
+p12_num = tk.IntVar()
+p13_num = tk.IntVar()
+p14_num = tk.IntVar()
+p15_num = tk.IntVar()
+p16_num = tk.IntVar()
+p17_num = tk.IntVar()
+p18_num = tk.IntVar()
+
+df=bdoni,12
+
+def open_home_team_sheet():
+    htsw = Toplevel(r)
+
+    htsw.geometry("300x800")
+
+    htsw.resizable(False,False)
+
+    htsw.title("Home - Team Sheet")
+
+    ts_name=Label(htsw,text= "Name",
+                  font = (bdoni,11),)
+    ts_name.place(relx= 0.2,rely=0.01,
+                   anchor = NW)
+    ts_num=Label(htsw,text = "#",
+                 font = (bdoni,11))
+    ts_num.place(relx=0.05,rely=0.01)
+
+    x = 0.165
+    x2 = 0.01
+    y = 0.035
+    val = 0.030
+    
+
+   
+       
+
+    pnum1 = tk.Entry(htsw, textvariable=p1_num,
+                     font=(df), width=4)
+    pnum1.place(relx=x2, rely=y)
+
+    pnum2 = tk.Entry(htsw, textvariable=p2_num,
+                     font=(df), width=4)
+    pnum2.place(relx=x2, rely=y+val)
+
+    pnum3 = tk.Entry(htsw, textvariable=p3_num, 
+                     font=(df), width=4)
+    pnum3.place(relx=x2, rely=y+val*2)
+
+    pnum4 = tk.Entry(htsw, textvariable=p4_num, font=(df), width=4)
+    pnum4.place(relx=x2, rely=y+val*3)
+
+    pnum5 = tk.Entry(htsw, textvariable=p5_num, font=(df), width=4)
+    pnum5.place(relx=x2, rely=y+val*4)
+
+    pnum6 = tk.Entry(htsw, textvariable=p6_num, font=(df), width=4)
+    pnum6.place(relx=x2, rely=y+val*5)
+
+    pnum7 = tk.Entry(htsw, textvariable=p7_num, font=(df), width=4)
+    pnum7.place(relx=x2, rely=y+val*6)
+
+    pnum8 = tk.Entry(htsw, textvariable=p8_num, font=(df), width=4)
+    pnum8.place(relx=x2, rely=y+val*7)
+
+    pnum9 = tk.Entry(htsw, textvariable=p9_num, font=(df), width=4)
+    pnum9.place(relx=x2, rely=y+val*8)
+
+    pnum10 = tk.Entry(htsw, textvariable=p10_num, font=(df), width=4)
+    pnum10.place(relx=x2, rely=y+val*9)
+
+    pnum11 = tk.Entry(htsw, textvariable=p11_num, font=(df), width=4)
+    pnum11.place(relx=x2, rely=y+val*10)
+
+    pnum12 = tk.Entry(htsw, textvariable=p12_num, font=(df), width=4)
+    pnum12.place(relx=x2, rely=y+val*11)
+
+    pnum13 = tk.Entry(htsw, textvariable=p13_num, font=(df), width=4)
+    pnum13.place(relx=x2, rely=y+val*12)
+
+    pnum14 = tk.Entry(htsw, textvariable=p14_num, font=(df), width=4)
+    pnum14.place(relx=x2, rely=y+val*13)
+
+    pnum15 = tk.Entry(htsw, textvariable=p15_num, font=(df), width=4)
+    pnum15.place(relx=x2, rely=y+val*14)
+
+    pnum16 = tk.Entry(htsw, textvariable=p16_num, font=(df), width=4)
+    pnum16.place(relx=x2, rely=y+val*15)
+
+    pnum17 = tk.Entry(htsw, textvariable=p17_num, font=(df), width=4)
+    pnum17.place(relx=x2, rely=y+val*16)
+
+    pnum18 = tk.Entry(htsw, textvariable=p18_num, font=(df), width=4)
+    pnum18.place(relx=x2, rely=y+val*17)
+
+    
+
+    pna1 = tk.Entry(htsw, textvariable=p1_name, font=(df))
+    pna1.place(relx=x, rely=y)
+
+    pna2 = tk.Entry(htsw, textvariable=p2_name, font=(df))
+    pna2.place(relx=x, rely=y + val)
+
+    pna3 = tk.Entry(htsw, textvariable=p3_name, font=(df))
+    pna3.place(relx=x, rely=y + val * 2)
+
+    pna4 = tk.Entry(htsw, textvariable=p4_name, font=(df))
+    pna4.place(relx=x, rely=y + val * 3)
+
+    pna5 = tk.Entry(htsw, textvariable=p5_name, font=(df))
+    pna5.place(relx=x, rely=y + val * 4)
+
+    pna6 = tk.Entry(htsw, textvariable=p6_name, font=(df))
+    pna6.place(relx=x, rely=y + val * 5)
+
+    pna7 = tk.Entry(htsw, textvariable=p7_name, font=(df))
+    pna7.place(relx=x, rely=y + val * 6)
+
+    pna8 = tk.Entry(htsw, textvariable=p8_name, font=(df))
+    pna8.place(relx=x, rely=y + val * 7)
+
+    pna9 = tk.Entry(htsw, textvariable=p9_name, font=(df))
+    pna9.place(relx=x, rely=y + val * 8)
+
+    pna10 = tk.Entry(htsw, textvariable=p10_name, font=(df))
+    pna10.place(relx=x, rely=y + val * 9)
+
+    pna11 = tk.Entry(htsw, textvariable=p11_name, font=(df))
+    pna11.place(relx=x, rely=y + val * 10)
+
+    pna12 = tk.Entry(htsw, textvariable=p12_name, font=(df))
+    pna12.place(relx=x, rely=y + val * 11)
+
+    pna13 = tk.Entry(htsw, textvariable=p13_name, font=(df))
+    pna13.place(relx=x, rely=y + val * 12)
+
+    pna14 = tk.Entry(htsw, textvariable=p14_name, font=(df))
+    pna14.place(relx=x, rely=y + val * 13)
+
+    pna15 = tk.Entry(htsw, textvariable=p15_name, font=(df))
+    pna15.place(relx=x, rely=y + val * 14)
+
+    pna16 = tk.Entry(htsw, textvariable=p16_name, font=(df))
+    pna16.place(relx=x, rely=y + val * 15)
+
+    pna17 = tk.Entry(htsw, textvariable=p17_name, font=(df))
+    pna17.place(relx=x, rely=y + val * 16)
+
+    pna18 = tk.Entry(htsw, textvariable=p18_name, font=(df))
+    pna18.place(relx=x, rely=y + val * 17)
+
+
+
+    def save_team_sheet():
+        htsw.destroy()
+        
+    save = Button(htsw,
+                 text="Save",font = (bdoni,10),width= 7,command = save_team_sheet)
+    save.place(relx=0.39,rely=0.62)
+
+   
+
+
+
+###############################################################################################################################
+
+
+home_team_sheet = Button(r,
+                         text = "Team Sheet", font = (bdoni,15),
+                           width = 15,command = open_home_team_sheet)
+home_team_sheet.place(relx=0.2,rely = 0.55)
+
+#################################################################
+
+def away_score_change():
+    score_away["text"] +=1
+    if score_away["text"]==99:
+        score_away["text"]=0
+
+away = Label(r,
+             text="Away",font = (bdoni,50))
+away.place(relx = 0.8, rely = 0.05, anchor = NE)
+
+score_away = Label(r,
+                    text= 0 , foreground='red',
+                    font=(bdoni, 150))
+score_away.place(relx=0.8, rely=0.15, anchor = NE)
+
+goal_away = Button(r,
+                    text="Goal", font = (bdoni,15),
+                    width= 10,command = away_score_change)
+goal_away.place(relx=0.8, rely=0.45, anchor = E)
+away_booking = Button(r,
+                      text = "Booking",font = (bdoni,15),width = 15)
+away_booking.place(relx=0.697,rely=0.474)
+
+#################################################################
+
+ap1_name = tk.StringVar()
+ap2_name = tk.StringVar()
+ap3_name = tk.StringVar()
+ap4_name = tk.StringVar()
+ap5_name = tk.StringVar()
+ap6_name = tk.StringVar()
+ap7_name = tk.StringVar()
+ap8_name = tk.StringVar()
+ap9_name = tk.StringVar()
+ap10_name = tk.StringVar()
+ap11_name = tk.StringVar()
+ap12_name = tk.StringVar()
+ap13_name = tk.StringVar()
+ap14_name = tk.StringVar()
+ap15_name = tk.StringVar()
+ap16_name = tk.StringVar()
+ap17_name = tk.StringVar()
+ap18_name = tk.StringVar()
+ap1_num = tk.IntVar( )
+ap2_num = tk.IntVar( )
+ap3_num = tk.IntVar( )
+ap4_num = tk.IntVar( )
+ap5_num = tk.IntVar()
+ap6_num = tk.IntVar()
+ap7_num = tk.IntVar()
+ap8_num= tk.IntVar()
+ap9_num= tk.IntVar()
+ap10_num = tk.IntVar()
+ap11_num = tk.IntVar()
+ap12_num = tk.IntVar()
+ap13_num = tk.IntVar()
+ap14_num = tk.IntVar()
+ap15_num = tk.IntVar()
+ap16_num = tk.IntVar()
+ap17_num = tk.IntVar()
+ap18_num = tk.IntVar()
+
+
+def open_away_team_sheet():
+    atsw = Toplevel(r)
+
+    atsw.geometry("300x800")
+
+    atsw.resizable(False,False)
+
+    atsw.title("Away - Team Sheet")
+
+    ts_name=Label(atsw,text= "Name",
+                  font = (bdoni,11),)
+    ts_name.place(relx= 0.2,rely=0.01,
+                   anchor = NW)
+    ts_num=Label(atsw,text = "#",
+                 font = (bdoni,11))
+    ts_num.place(relx=0.05,rely=0.01)
+
+    x = 0.165
+    x2 = 0.01
+    y = 0.035
+    val = 0.030
+    
+
+    
+    
+    apnum1 = tk.Entry(atsw, textvariable=ap1_num,
+                     font=(df), width=4)
+    apnum1.place(relx=x2, rely=y)
+
+    apnum2 = tk.Entry(atsw, textvariable=ap2_num,
+                     font=(df), width=4)
+    apnum2.place(relx=x2, rely=y+val)
+
+    apnum3 = tk.Entry(atsw, textvariable=ap3_num, 
+                     font=(df), width=4)
+    apnum3.place(relx=x2, rely=y+val*2)
+
+    apnum4 = tk.Entry(atsw, textvariable=ap4_num, font=(df), width=4)
+    apnum4.place(relx=x2, rely=y+val*3)
+
+    apnum5 = tk.Entry(atsw, textvariable=ap5_num, font=(df), width=4)
+    apnum5.place(relx=x2, rely=y+val*4)
+
+    apnum6 = tk.Entry(atsw, textvariable=ap6_num, font=(df), width=4)
+    apnum6.place(relx=x2, rely=y+val*5)
+
+    apnum7 = tk.Entry(atsw, textvariable=ap7_num, font=(df), width=4)
+    apnum7.place(relx=x2, rely=y+val*6)
+
+    apnum8 = tk.Entry(atsw, textvariable=ap8_num, font=(df), width=4)
+    apnum8.place(relx=x2, rely=y+val*7)
+
+    apnum9 = tk.Entry(atsw, textvariable=ap9_num, font=(df), width=4)
+    apnum9.place(relx=x2, rely=y+val*8)
+
+    apnum10 = tk.Entry(atsw, textvariable=ap10_num, font=(df), width=4)
+    apnum10.place(relx=x2, rely=y+val*9)
+
+    apnum11 = tk.Entry(atsw, textvariable=ap11_num, font=(df), width=4)
+    apnum11.place(relx=x2, rely=y+val*10)
+
+    apnum12 = tk.Entry(atsw, textvariable=ap12_num, font=(df), width=4)
+    apnum12.place(relx=x2, rely=y+val*11)
+
+    apnum13 = tk.Entry(atsw, textvariable=ap13_num, font=(df), width=4)
+    apnum13.place(relx=x2, rely=y+val*12)
+
+    apnum14 = tk.Entry(atsw, textvariable=ap14_num, font=(df), width=4)
+    apnum14.place(relx=x2, rely=y+val*13)
+
+    apnum15 = tk.Entry(atsw, textvariable=ap15_num, font=(df), width=4)
+    apnum15.place(relx=x2, rely=y+val*14)
+
+    apnum16 = tk.Entry(atsw, textvariable=ap16_num, font=(df), width=4)
+    apnum16.place(relx=x2, rely=y+val*15)
+
+    apnum17 = tk.Entry(atsw, textvariable=ap17_num, font=(df), width=4)
+    apnum17.place(relx=x2, rely=y+val*16)
+
+    apnum18 = tk.Entry(atsw, textvariable=ap18_num, font=(df), width=4)
+    apnum18.place(relx=x2, rely=y+val*17)
+
+    
+
+    apna1 = tk.Entry(atsw, textvariable=ap1_name, font=(df))
+    apna1.place(relx=x, rely=y)
+
+    apna2 = tk.Entry(atsw, textvariable=ap2_name, font=(df))
+    apna2.place(relx=x, rely=y + val)
+
+    apna3 = tk.Entry(atsw, textvariable=ap3_name, font=(df))
+    apna3.place(relx=x, rely=y + val * 2)
+
+    apna4 = tk.Entry(atsw, textvariable=ap4_name, font=(df))
+    apna4.place(relx=x, rely=y + val * 3)
+
+    apna5 = tk.Entry(atsw, textvariable=ap5_name, font=(df))
+    apna5.place(relx=x, rely=y + val * 4)
+
+    apna6 = tk.Entry(atsw, textvariable=ap6_name, font=(df))
+    apna6.place(relx=x, rely=y + val * 5)
+
+    apna7 = tk.Entry(atsw, textvariable=ap7_name, font=(df))
+    apna7.place(relx=x, rely=y + val * 6)
+
+    apna8 = tk.Entry(atsw, textvariable=ap8_name, font=(df))
+    apna8.place(relx=x, rely=y + val * 7)
+
+    apna9 = tk.Entry(atsw, textvariable=ap9_name, font=(df))
+    apna9.place(relx=x, rely=y + val * 8)
+
+    apna10 = tk.Entry(atsw, textvariable=ap10_name, font=(df))
+    apna10.place(relx=x, rely=y + val * 9)
+
+    apna11 = tk.Entry(atsw, textvariable=ap11_name, font=(df))
+    apna11.place(relx=x, rely=y + val * 10)
+
+    apna12 = tk.Entry(atsw, textvariable=ap12_name, font=(df))
+    apna12.place(relx=x, rely=y + val * 11)
+
+    apna13 = tk.Entry(atsw, textvariable=ap13_name, font=(df))
+    apna13.place(relx=x, rely=y + val * 12)
+
+    apna14 = tk.Entry(atsw, textvariable=ap14_name, font=(df))
+    apna14.place(relx=x, rely=y + val * 13)
+
+    apna15 = tk.Entry(atsw, textvariable=ap15_name, font=(df))
+    apna15.place(relx=x, rely=y + val * 14)
+
+    apna16 = tk.Entry(atsw, textvariable=ap16_name, font=(df))
+    apna16.place(relx=x, rely=y + val * 15)
+
+    apna17 = tk.Entry(atsw, textvariable=ap17_name, font=(df))
+    apna17.place(relx=x, rely=y + val * 16)
+
+    apna18 = tk.Entry(atsw, textvariable=ap18_name, font=(df))
+    apna18.place(relx=x, rely=y + val * 17)
+
+    def away_save_team_sheet():
+        atsw.destroy()
+        
+    save = Button(atsw,
+                 text="Save",font = (bdoni,10),width= 7,command = away_save_team_sheet)
+    save.place(relx=0.39,rely=0.62)
+
+away_team_sheet = Button(r,
+                         text = "Team Sheet", font =(bdoni,15),
+                         width = 15,command = open_away_team_sheet )
+away_team_sheet.place(relx=0.697,rely= 0.525)
+###########################################################
+
+def reset_screen():
+    Score_home ["text"]=0
+    score_away["text"]=0
+    
+reset_score = Button(r,
+                     text = "Reset Score",
+                     font = ('Segoe UI Semibolld',10),
+                     command = reset_screen)
+reset_score.place(relx = 0.5, rely= 0.85, anchor=S)
+sec = StringVar()
+sec.set('00')
+min = StringVar()
+min.set('00')
+
+secEntry = Entry(r,width = 5, font= (bdoni,18), textvariable = sec)
+secEntry.place(relx = 0.45, rely =0.3 )
+
+minEntry = Entry(r, width = 5, font = (bdoni,18),textvariable = min)
+minEntry.place(relx = 0.55, rely= 0.3)
+def KickoffTimer ():
+    try:
+
+        temp = int(min.get())*60+ int(sec.get())
+    except:
+        print("blah, blah, blah")
+    while temp>-1:
+        secs= divmod(temp,60)
+        mins= 0
+        min.set("{0:2d}".format(mins))
+        sec.set("{0:2d}".format(secs))
+        r.update()
+        time.sleep(1)
+        if (temp ==0):
+            print ("Over")
+            temp-= 1 
+    
+class ExtraTimeStopwatch:
+    def __init__(self):
+        self.running = False
+        self.start_time = 0
+
+        self.label = tk.Label(r, text="0:00:00",fg="dark green" , font=("Helvetica", 35))
+        self.label.place(relx=0.445, rely=0.3)
+
+        self.start_button = tk.Button(r, text="Start", fg="dark green", font=("MS PGothic", 20), command=self.start_stop)
+        self.reset_button = tk.Button(r, text="Reset", fg="dark green", font=("MS PGothic", 20), command=self.reset)
+
+        self.start_button.place(relx=0.44, rely=0.46, anchor=tk.CENTER)
+        self.reset_button.place(relx=0.55, rely=0.46, anchor=tk.CENTER)
+
+        self.update_time()
+
+    def start_stop(self):
+        if self.running:
+            self.running = False
+            self.start_button.config(text="Start")
+        else:
+            self.running = True
+            self.start_button.config(text="Stop")
+            if self.start_time == 0:
+                self.start_time = datetime.now()
+            else:
+                self.start_time += datetime.now() - self.pause_time
+            self.update_time()
+
+    def reset(self):
+        self.running = False
+        self.start_time = 0
+        self.label.config(text="0:00:00")
+        self.start_button.config(text="Start")
+
+    def update_time(self):
+        if self.running:
+            current_time = datetime.now()
+            elapsed_time = current_time - self.start_time
+            time_str = str(elapsed_time).split(".")[0]
+            self.label.config(text=time_str)
+            r.after(1000, self.update_time)
+            self.pause_time = current_time
+        else:
+            r.after(1000, self.update_time)
+
+# Create an instance of the StopwatchApp class
+stopwatch_app = ExtraTimeStopwatch()
+##############################################################################################
+
+
+
+##################################################################################################
+
+def kickoff_button_split():
+    kickoff_button["text"]= "Stop"
+    kickoff_button["width"] = 5
+    kickoff_button.place(relx =0.52, rely= 0.4, anchor = CENTER )
+    start_kickoff_button_split = Button(r, text = "Start", width = 5, font = (bdoni,15),command = KickoffTimer)
+    start_kickoff_button_split.place(relx =0.48, rely =0.4, anchor = CENTER)
+
+
+
+kickoff_button = Button(r,
+                         text="Kick-Off",font = (bdoni,15),
+                         width = 15, command = kickoff_button_split)
+kickoff_button.place(relx=0.495, rely=0.4, anchor=CENTER)
+
+
+
+
+
+
+
+
+
+
+
+#when trying to run program invalid syntax appears fix it
+
+
+
+
+
+#note to self create a dash line to seperate home and away scores using canvas, then after figure out the stopwatch formatting.
+
+
+seperation_line = Canvas(r, width = 200, height = 100)
+seperation_line.pack()
+
+seperation_line.create_line(50,200,300,400, width = 5)
+r.mainloop()
